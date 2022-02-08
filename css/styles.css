@@ -35,52 +35,278 @@ img {
 */
 
 /* ====================================
-        STARTERS
+        STARTER
 ======================================= */
 
-.grid {
+html,
+body {
+  margin: 10;
+  padding: 10;
+}
+
+body {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 16px;
+  background-color: black;
+  color: #b3f90e;
+  line-height: 1.6;
   display: flex;
-  flex-wrap: wrap;
-  width: 300px;
-  height: 300px;
-  border: solid 1px #404040;
-}
-
-.grid div {
-  width: 20px;
-  height: 20px;
-}
-
-.shooter {
-  background-color: green;
-}
-
-.invader {
-  background-color: purple;
-  border-radius: 10px;
-}
-
-.boom {
-  background-color: red;
-}
-
-.laser {
-  background-color: orange;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ====================================
         TYPOGRAPHY
 ======================================= */
 
+h1,
+h2,
+h3,
+button {
+  text-transform: uppercase;
+}
+
+#flip,
+.title,
+.score-display {
+  font-family: "Share Tech Mono", monospace;
+}
+
+.title {
+  color: #b3f90e;
+  font-size: 3rem;
+  text-align: center;
+  border: 3px solid #b3f90e;
+  border-radius: 3rem;
+  width: 33rem;
+  padding: 0.2em;
+  margin: 2rem auto 2.5rem auto;
+  display: block;
+}
+
+.score-display {
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: #f47320;
+  background-color: #212121;
+  border-radius: 1rem;
+}
+
+button {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.7rem;
+}
+
 /* ====================================
         LAYOUT
 ======================================= */
 
-/* --- GENERAL --- */
+.score-display {
+  margin-bottom: 1em;
+}
 
-/* --- HEADER --- */
+/* --- GRID --- */
 
-/* --- BUTTONS --- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  /* border: 1px solid darkgray; */
+  margin-bottom: 1em;
+}
+
+.grid div {
+  width: 40px;
+  height: 40px;
+}
+
+/* ====================================
+        CHARACTERS
+======================================= */
+
+.shooter {
+  background: url(../img/shooter.svg);
+}
+
+.invader {
+  background: url(../img/invader.svg);
+}
+
+.boom {
+  background: url(../img/explosion.svg);
+}
+
+.laser {
+  background: url(../img/laser.svg);
+}
+
+/* ====================================
+        BUTTONS
+======================================= */
+
+button {
+  border: none;
+  background: none;
+  color: white;
+}
+
+.button-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 19rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 0.5rem #ac2023;
+  background-color: red;
+}
+
+.button-start:active,
+.btn-up:active,
+.btn-right:active,
+.btn-left:active {
+  position: relative;
+  top: 0.5rem;
+  box-shadow: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.button-move-parent {
+  display: inline-block;
+}
+
+.button-move {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  width: 9rem;
+}
+
+.btn-up,
+.btn-right,
+.btn-left {
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 2.5rem;
+  color: #eecfbb;
+  box-shadow: 0 0.5rem #da4c28;
+  background-color: #f47320;
+}
+
+.btn-up {
+  margin: 1rem 2.25rem;
+}
+
+.btn-left {
+  margin-right: 0.5rem;
+}
+
+/* ====================================
+        GAME OVER
+======================================= */
+
+#over {
+  display: none;
+}
+
+.gameover {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.5rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 44%;
+  width: 3rem;
+  animation: roll 4s infinite;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0) scale(0);
+  }
+  100% {
+    transform: rotate(360deg) scale(5);
+  }
+}
+
+/* ====================================
+        FOOTER
+======================================= */
+
+.footer {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#flip {
+  height: 30px;
+  overflow: hidden;
+}
+
+#flip > div > div {
+  color: #fff;
+  padding: 4px 12px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+
+#flip div:first-child {
+  animation: show 10s linear infinite;
+}
+
+#flip div div,
+#flip div:first-child div,
+#flip div:last-child div {
+  color: gray;
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
 
 /* ====================================
         MEDIA QUERY

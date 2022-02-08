@@ -117,8 +117,6 @@ function moveInvaders() {
         resultsDisplay.innerHTML = 'YOU WIN'
         clearInterval(invadersId)
     }
-
-
 }
 invadersId = setInterval(moveInvaders, 300)
 

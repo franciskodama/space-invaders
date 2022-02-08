@@ -4,79 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <title>Space Invaders</title>
+    <title>Space Invaders by Francis Kodama</title>
     <meta name="space invaders game" content="By Francis Kodama | Basic structure was built following Ania Kubów's tutorial"/>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="icon" type="image/png"   sizes="196x196" href="./assets/img/favicon-196x196.png">
-    <link rel="icon" type="image/png"   sizes="160x160" href="./assets/img/favicon-160x160.png">
-    <link rel="apple-touch-icon"        sizes="144x144" href="./assets/img/apple-touch-icon-72x72-precomposed@2x.png">
-    <link rel="apple-touch-icon"        sizes="114x114" href="./assets/img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="icon" type="image/png"   sizes="96x96" href="./assets/img/favicon-96x96.png">
-    <link rel="apple-touch-icon"        sizes="72x72" href="./assets/img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon"        sizes="57x57" href="./assets/img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="icon" type="image/png"   sizes="32x32" href="./assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png"   sizes="16x16" href="./assets/img/favicon-16x16.png">
-    <meta name="apple-mobile-web-app-title" content="My title">
-    <meta name="author" content="./contributors.txt" />
-    <meta name="theme-color" content="#005395">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#005395">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="Index, Follow">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="My URL">
-    <meta property="og:title" content="My Title">
-    <meta property="og:image" content="./assets/img/share-facebook.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:description" content="My description">
-    <meta property="og:site_name" content="My company">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <link rel="canonical" href="My URL">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300&family=Sen:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/reset.css">
-     
-    
-    
-    <link rel="stylesheet" href="./assets/css/base/typography.css">
-    
-    <link rel="stylesheet" href="./assets/css/utils/helpers.css">
-
-    <link rel="stylesheet" href="./assets/css/layout/header.css">
-    <link rel="stylesheet" href="./assets/css/layout/navigation.css">
-    <link rel="stylesheet" href="./assets/css/layout/footer.css">
-
-    <link rel="stylesheet" href="./assets/css/components/buttons.css">
-    <link rel="stylesheet" href="./assets/css/components/cards.css">
-
-    
-
-    <link rel="stylesheet" href="./assets/css/pages/hero.css">
-    <link rel="stylesheet" href="./assets/css/pages/specialities.css">
-    <link rel="stylesheet" href="./assets/css/pages/mission.css">
-    <link rel="stylesheet" href="./assets/css/pages/packages.css">
-    <link rel="stylesheet" href="./assets/css/pages/professors.css">
-    <link rel="stylesheet" href="./assets/css/pages/company.css">
-    <link rel="stylesheet" href="./assets/css/pages/testemonials.css">
-    <link rel="stylesheet" href="./assets/css/pages/contact.css">
-    <link rel="stylesheet" href="./assets/css/pages/map.css">
 </head>
 <body>
 
-    <h1 class="results">0</h1>
-    <div class="grid">
+    <header>
+        <div class="limit-content">
+            <h1 class="title">Space Invaders</h1>
+        </div>
+    </header>
+
+    <section class="score-display">
+        <div class="limit-content">
+            <h2>Score <span class="results"></span></h2>
+        </div>
+    </section>
+
+    <div class="grid"></div>
+
+    <section class="button-action">
+        <div class="button-start">
+            <button id="start">Start<br>Restart</button>
+        </div>
+        
+        <div class="button-move-parent">
+            <div class="button-move">
+                <button class="btn-up"><i class="fas fa-caret-up"></i></button>
+                <button class="btn-left"><i class="fas fa-caret-left"></i></button>
+                <button class="btn-right"><i class="fas fa-caret-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 id="over">game <i class="far fa-dizzy fa-sm"></i>ver</h3>
+    </section>
+
+    <footer class="footer">
+        <div class="limit-content">
+            <div id=flip>
+                <div><div>All Rights Reserved.</div></div>
+                <div><div>© Copyright 2021.</div></div>
+                <div><div>By Kodama</div></div>
+            </div>
+        </div>
+    </footer>
 
 
-    </div>
+    <audio id="audio-bite">
+        <source src="./audio/bite.ogg" type="audio/ogg">
+        <source src="./audio/bite.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-die">
+        <source src="./audio/die.ogg" type="audio/ogg">
+        <source src="./audio/die.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-start">
+        <source src="./audio/start.ogg" type="audio/ogg">
+        <source src="./audio/start.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-turn">
+        <source src="./audio/turn.ogg" type="audio/ogg">
+        <source src="./audio/turn.mp3" type="audio/mpeg">
+    </audio>
 
 
 
