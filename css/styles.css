@@ -1,0 +1,99 @@
+/*
+
+Color Scheme:
+    Blue: #12B3D8
+    Orange: #FF860F
+    Green: #B3F90E
+    Light Gray: #F5F5F5
+
+Fonts:
+    Headings:
+        font-family: 'Roboto Slab', "Times New Roman", Times, Helvetica, serif;
+    
+    Paragraph:
+        font-family: 'Open Sans', "Times New Roman", Times, Helvetica, serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 16px;
+  background-color: white;
+  color: #404040;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*/
+
+/* ====================================
+        STARTERS
+======================================= */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  border: solid 1px #404040;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+}
+
+.shooter {
+  background-color: green;
+}
+
+.invader {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+.boom {
+  background-color: red;
+}
+
+.laser {
+  background-color: orange;
+}
+
+/* ====================================
+        TYPOGRAPHY
+======================================= */
+
+/* ====================================
+        LAYOUT
+======================================= */
+
+/* --- GENERAL --- */
+
+/* --- HEADER --- */
+
+/* --- BUTTONS --- */
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}
