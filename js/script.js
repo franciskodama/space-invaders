@@ -13,19 +13,18 @@ let results = 0
   
 //SELECTORS --------------------------------
 
-
-
+const startButton = document.getElementById('start');
+const shootButton = document.querySelector('.btn-shoot');
+const rightButton = document.querySelector('.btn-right');
+const leftButton = document.querySelector('.btn-left');
 
 
 //GRID --------------------------------
-
-
 
 for (let i = 0; i < 255; i++) {
     const square = document.createElement('div')
     grid.appendChild(square)
 }
-
 const squares = Array.from(document.querySelectorAll('.grid div'))
 
 //INVADERS --------------------------------
@@ -56,6 +55,23 @@ function remove() {
 
 squares[currentShooterIndex].classList.add('shooter')
 
+// function moveShooter(e) {
+//     squares[currentShooterIndex].classList.remove('shooter')
+//     switch(e.key) {
+//         case 'ArrowLeft':
+//             if(currentShooterIndex % width !== 0) currentShooterIndex -=1
+//             break
+//         case 'ArrowRight':
+//             if(currentShooterIndex % width < width -1) currentShooterIndex +=1
+//             break
+//     }
+//     squares[currentShooterIndex].classList.add('shooter')
+// }
+// document.addEventListener('keydown', moveShooter)
+
+
+
+
 function moveShooter(e) {
     squares[currentShooterIndex].classList.remove('shooter')
     switch(e.key) {
@@ -72,8 +88,28 @@ document.addEventListener('keydown', moveShooter)
 
 
 
-//MOVE INVADERS --------------------------------
 
+function moveShooterRight() {
+    squares[currentShooterIndex].classList.remove('shooter')
+    console.log("move right")
+    if(currentShooterIndex % width < width -1) {
+        currentShooterIndex +=1
+    } 
+    squares[currentShooterIndex].classList.add('shooter')
+}
+
+function moveShooterLeft() {
+    squares[currentShooterIndex].classList.remove('shooter')
+    console.log("move left")
+    if(currentShooterIndex % width !== 0) {
+        currentShooterIndex -=1
+    }
+    squares[currentShooterIndex].classList.add('shooter')
+}
+
+
+
+//MOVE INVADERS --------------------------------
 
 function moveInvaders() {
     const leftEdge = alienInvaders[0] % width === 0
@@ -118,7 +154,15 @@ function moveInvaders() {
         clearInterval(invadersId)
     }
 }
+
 invadersId = setInterval(moveInvaders, 300)
+
+function startGame() {
+    console.log("teste")
+    draw()
+}
+
+
 
 
 //SHOOT ------------------------------------
@@ -146,8 +190,8 @@ function shoot(e) {
         } 
 
     }
-    switch(e.key) {
-        case 'ArrowUp': 
+    switch(e.keyCode) {
+        case 32: 
         laserId = setInterval(moveLaser, 100)
     }
 }     
@@ -156,8 +200,13 @@ function shoot(e) {
 
 //EVENT LISTENERS --------------------------
 
-document.addEventListener('keydown', shoot) 
+document.addEventListener('keydown', shoot)
+
+startButton.addEventListener('click', startGame);
+shootButton.addEventListener('click', shoot);
+
+rightButton.addEventListener('click', moveShooterRight);
+leftButton.addEventListener('click', moveShooterLeft);
 
 
-
-//FUNCTIONS --------------------------------
+//FUNCTIONS -------------------------------- 

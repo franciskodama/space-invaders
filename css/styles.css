@@ -175,7 +175,7 @@ button {
 }
 
 .button-start:active,
-.btn-up:active,
+.btn-shoot:active,
 .btn-right:active,
 .btn-left:active {
   position: relative;
@@ -198,7 +198,7 @@ button:focus {
   width: 9rem;
 }
 
-.btn-up,
+.btn-shoot,
 .btn-right,
 .btn-left {
   font-size: 1.2rem;
@@ -210,7 +210,7 @@ button:focus {
   background-color: #f47320;
 }
 
-.btn-up {
+.btn-shoot {
   margin: 1rem 2.25rem;
 }
 
