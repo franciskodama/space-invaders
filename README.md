@@ -1,6 +1,6 @@
 ### Hi there! I'm Francis Kodama! 👋
 
-## WELCOME TO MY SPACE INVADERS PROJECT. 👻
+## WELCOME TO MY SPACE INVADERS PROJECT. 👾
 
 <hr />
 
