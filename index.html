@@ -1,82 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>Space Invaders by Francis Kodama</title>
-    <meta name="space invaders game" content="By Francis Kodama | Basic structure was built following Ania Kubów's tutorial"/>
+    <meta
+      name="description"
+      content="Space Invaders by Francis Kodama | Basic structure was built following Ania Kubów's tutorial"
+    />
+    <meta
+      name="title"
+      property="og:title"
+      content="Space Invaders by Francis Kodama"
+    />
+    <meta property="og:type" content="Space Invaders video game" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://fkodama.com/_permanent/linkedin/project-space-thumb.jpg"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="Space Invaders by Francis Kodama"
+    />
+    <meta name="author" content="Francis Kodama" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/5881a3bb20.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/5881a3bb20.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/reset.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <body>
     <header>
-        <div class="limit-content">
-            <h1 class="title">Space Invaders</h1>
-        </div>
+      <div class="limit-content">
+        <h1 class="title">Space Invaders</h1>
+      </div>
     </header>
 
     <section class="score-display">
-        <div class="limit-content">
-            <h2>Score <span class="results"></span></h2>
-        </div>
+      <div class="limit-content">
+        <h2>Score <span class="results"></span></h2>
+      </div>
     </section>
 
     <div class="grid"></div>
 
     <section class="button-parent">
-        <div class="button-start">
-            <button id="start">Start<br>Restart</button>
-        </div>
-        <div class="button-move-shoot">
-            <button class="btn-left"><i class="fas fa-caret-left"></i></button>
-            <button class="btn-right"><i class="fas fa-caret-right"></i></button>
-            <button class="btn-shoot"><i class="fas fa-caret-up"></i></button>
-        </div>
+      <div class="button-start">
+        <button id="start">Start<br />Restart</button>
+      </div>
+      <div class="button-move-shoot">
+        <button class="btn-left"><i class="fas fa-caret-left"></i></button>
+        <button class="btn-right"><i class="fas fa-caret-right"></i></button>
+        <button class="btn-shoot"><i class="fas fa-caret-up"></i></button>
+      </div>
     </section>
 
     <section>
-        <h3 id="over">game <i class="far fa-dizzy fa-sm"></i>ver</h3>
+      <h3 id="over">game <i class="far fa-dizzy fa-sm"></i>ver</h3>
     </section>
 
     <footer class="footer">
-        <div class="limit-content">
-            <div id=flip>
-                <div><div>All Rights Reserved.</div></div>
-                <div><div>© Copyright 2022.</div></div>
-                <div><div>By Kodama</div></div>
-            </div>
+      <div class="limit-content">
+        <div id="flip">
+          <div><div>All Rights Reserved.</div></div>
+          <div><div>© Copyright 2022.</div></div>
+          <div><div>By Kodama</div></div>
         </div>
+      </div>
     </footer>
 
     <audio id="audio-boom">
-        <!-- <source src="./audio/boom.ogg" type="audio/ogg"> -->
-        <source src="./audio/boom.mp3" type="audio/mpeg">
+      <!-- <source src="./audio/boom.ogg" type="audio/ogg"> -->
+      <source src="./audio/boom.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audio-die">
-        <source src="./audio/die.ogg" type="audio/ogg">
-        <source src="./audio/die.mp3" type="audio/mpeg">
+      <source src="./audio/die.ogg" type="audio/ogg" />
+      <source src="./audio/die.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audio-win">
-        <!-- <source src="./audio/win.ogg" type="audio/ogg"> -->
-        <source src="./audio/win.mp3" type="audio/mpeg">
+      <!-- <source src="./audio/win.ogg" type="audio/ogg"> -->
+      <source src="./audio/win.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audio-start">
-        <source src="./audio/start.ogg" type="audio/ogg">
-        <source src="./audio/start.mp3" type="audio/mpeg">
+      <source src="./audio/start.ogg" type="audio/ogg" />
+      <source src="./audio/start.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audio-laser">
-        <source src="./audio/laser.ogg" type="audio/ogg">
-        <source src="./audio/laser.mp3" type="audio/mpeg">
+      <source src="./audio/laser.ogg" type="audio/ogg" />
+      <source src="./audio/laser.mp3" type="audio/mpeg" />
     </audio>
 
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>
-
