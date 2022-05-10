@@ -9,14 +9,26 @@ let invadersId
 let goingRight = true
 let aliensRemoved = []
 let results = 0
+const audioStart = document.getElementById('audio-start'); 
+const audioLaser = document.getElementById('audio-laser');
+const audioBoom = document.getElementById('audio-boom');
+const audioDie = document.getElementById('audio-die'); 
+const audioWin = document.getElementById('audio-win'); 
 
-  
+
 //SELECTORS --------------------------------
-
 const startButton = document.getElementById('start');
 const shootButton = document.querySelector('.btn-shoot');
 const rightButton = document.querySelector('.btn-right');
 const leftButton = document.querySelector('.btn-left');
+
+
+//EVENT LISTENERS --------------------------
+document.addEventListener('keydown', shoot)
+startButton.addEventListener('click', startGame);
+shootButton.addEventListener('click', shoot);
+rightButton.addEventListener('click', moveShooterRight);
+leftButton.addEventListener('click', moveShooterLeft);
 
 
 //GRID --------------------------------
@@ -55,23 +67,6 @@ function remove() {
 
 squares[currentShooterIndex].classList.add('shooter')
 
-// function moveShooter(e) {
-//     squares[currentShooterIndex].classList.remove('shooter')
-//     switch(e.key) {
-//         case 'ArrowLeft':
-//             if(currentShooterIndex % width !== 0) currentShooterIndex -=1
-//             break
-//         case 'ArrowRight':
-//             if(currentShooterIndex % width < width -1) currentShooterIndex +=1
-//             break
-//     }
-//     squares[currentShooterIndex].classList.add('shooter')
-// }
-// document.addEventListener('keydown', moveShooter)
-
-
-
-
 function moveShooter(e) {
     squares[currentShooterIndex].classList.remove('shooter')
     switch(e.key) {
@@ -83,27 +78,17 @@ function moveShooter(e) {
             break
     }
     squares[currentShooterIndex].classList.add('shooter')
-}
-document.addEventListener('keydown', moveShooter)
-
-
-
+} 
 
 function moveShooterRight() {
     squares[currentShooterIndex].classList.remove('shooter')
-    console.log("move right")
-    if(currentShooterIndex % width < width -1) {
-        currentShooterIndex +=1
-    } 
+    if(currentShooterIndex % width < width -1) currentShooterIndex +=1
     squares[currentShooterIndex].classList.add('shooter')
 }
 
 function moveShooterLeft() {
     squares[currentShooterIndex].classList.remove('shooter')
-    console.log("move left")
-    if(currentShooterIndex % width !== 0) {
-        currentShooterIndex -=1
-    }
+    if(currentShooterIndex % width !== 0) currentShooterIndex -=1
     squares[currentShooterIndex].classList.add('shooter')
 }
 
@@ -139,39 +124,34 @@ function moveInvaders() {
 
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
         resultsDisplay.innerHTML = 'GAME OVER'
+        audioDie.play()
         clearInterval(invadersId)
     }
 
     for  (let i = 0; i < alienInvaders.length; i++) {
         if(alienInvaders[i] > squares.length) {
             resultsDisplay.innerHTML = 'GAME OVER'
+            audioDie.play()
             clearInterval(invadersId)
         }
     }
     
     if (aliensRemoved.length === alienInvaders.length) {
         resultsDisplay.innerHTML = 'YOU WIN'
+        audioWin.play()
         clearInterval(invadersId)
-    }
+    } 
 }
 
-invadersId = setInterval(moveInvaders, 300)
-
-function startGame() {
-    console.log("teste")
-    draw()
-}
-
-
-
-
+ 
 //SHOOT ------------------------------------
 
 function shoot(e) {
     let laserId
     let currentLaserIndex = currentShooterIndex
+    audioLaser.play()
     function moveLaser() {
-        squares[currentLaserIndex].classList.remove('laser')
+        squares[currentLaserIndex].classList.remove("laser")
         currentLaserIndex -= width
         squares[currentLaserIndex].classList.add('laser')
 
@@ -179,6 +159,7 @@ function shoot(e) {
             squares[currentLaserIndex].classList.remove('laser')
             squares[currentLaserIndex].classList.remove('invader')
             squares[currentLaserIndex].classList.add('boom')
+            audioBoom.play()
         
             setTimeout(()=> squares[currentLaserIndex].classList.remove('boom'), 300)
             clearInterval(laserId)
@@ -190,23 +171,17 @@ function shoot(e) {
         } 
 
     }
-    switch(e.keyCode) {
-        case 32: 
+    switch(e.keyCode) {  
+        case 32:  
         laserId = setInterval(moveLaser, 100)
     }
 }     
-
-
-
-//EVENT LISTENERS --------------------------
-
-document.addEventListener('keydown', shoot)
-
-startButton.addEventListener('click', startGame);
-shootButton.addEventListener('click', shoot);
-
-rightButton.addEventListener('click', moveShooterRight);
-leftButton.addEventListener('click', moveShooterLeft);
-
+invadersId = setInterval(moveInvaders, 300) 
 
 //FUNCTIONS -------------------------------- 
+
+function startGame() {
+    audioStart.play()
+    console.log("teste")
+    draw()
+}
