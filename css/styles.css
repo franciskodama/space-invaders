@@ -36,16 +36,9 @@ button {
   font-family: "Share Tech Mono", monospace;
 }
 
-.title {
-  color: #b3f90e;
-  font-size: 3rem;
-  text-align: center;
-  border: 3px solid #b3f90e;
-  border-radius: 3rem;
-  width: 33rem;
-  padding: 0.2em;
-  margin: 2rem auto 2.5rem auto;
-  display: block;
+.logo {
+  width: 25em;
+  margin: 2em;
 }
 
 .score-display {
