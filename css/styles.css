@@ -71,8 +71,8 @@ button {
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
-  /* border: 1px solid darkgray; */
-  margin-bottom: 1em;
+  margin-bottom: 3em;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
 .grid div {
@@ -89,7 +89,7 @@ button {
 }
 
 .invader {
-  background: url(../img/invader.svg);
+  background-image: url(../img/invader.svg);
 }
 
 .boom {
