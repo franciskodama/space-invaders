@@ -36,11 +36,6 @@ button {
   font-family: "Share Tech Mono", monospace;
 }
 
-.logo {
-  width: 25em;
-  margin: 2em;
-}
-
 .score-display {
   font-size: 1.5rem;
 }
@@ -60,6 +55,11 @@ button {
         LAYOUT
 ======================================= */
 
+.logo {
+  width: 22em;
+  margin: 2em;
+}
+
 .score-display {
   margin-bottom: 1em;
 }
@@ -69,15 +69,15 @@ button {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
+  width: 315px;
+  height: 315px;
   margin-bottom: 3em;
   border: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
 .grid div {
-  width: 40px;
-  height: 40px;
+  width: 21px;
+  height: 21px;
 }
 
 /* ====================================
@@ -113,11 +113,9 @@ button {
 .button-parent {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
   width: 30rem;
   margin: 0 auto;
-  text-align: center;
 }
 
 .button-start {
@@ -129,6 +127,7 @@ button {
   height: 4rem;
   box-shadow: 0 0.5rem #ac2023;
   background-color: red;
+  margin-right: 6em;
 }
 
 .button-start:active,
@@ -268,6 +267,29 @@ button:focus {
 }
 
 @media only screen and (min-width: 48em) {
+  .logo {
+    width: 22em;
+  }
+
+  .score-display {
+    margin-bottom: 1em;
+  }
+
+  /* --- GRID --- */
+
+  .grid {
+    width: 450px;
+    height: 450px;
+  }
+
+  .grid div {
+    width: 30px;
+    height: 30px;
+  }
+
+  .button-start {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (min-width: 62em) {
